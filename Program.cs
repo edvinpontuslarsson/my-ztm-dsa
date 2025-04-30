@@ -1,2 +1,14 @@
-﻿// See https://aka.ms/new-console-template for more information
-Console.WriteLine("Hello, World!");
+﻿using System;
+
+namespace MyZtmDsa
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            int showtime = MyOwnSandbox.Increment(0);
+
+            Console.WriteLine(showtime);
+        }
+    }
+}
