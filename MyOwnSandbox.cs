@@ -7,9 +7,8 @@ namespace MyZtmDsa
     {
         public static int Increment (int n) => n + 1;
 
-        public static int Mode (int[] numbers)
+        public static int[] Mode (int[] numbers)
         {
-            // int[] numbers = {0, 0, 1, 2, 2, 3, 1, 1, 0};
 
             Array.Sort(numbers);
 
@@ -17,10 +16,8 @@ namespace MyZtmDsa
 
             int maxOccurance = 0;
 
-            for (int i = 0; i < numbers.Length; i++)
+            foreach (int current in numbers)
             {
-                int current = numbers[i];
-
                 if (dictionary.ContainsKey(current))
                 {
                     dictionary[current] = dictionary[current] + 1;
@@ -33,7 +30,17 @@ namespace MyZtmDsa
                 if (dictionary[current] > maxOccurance) maxOccurance = dictionary[current];
             }
 
-            return maxOccurance;
+            List<int> modeList = new List<int>();
+
+            foreach (int key in dictionary.Keys)
+            {
+                if (dictionary[key] == maxOccurance)
+                {
+                    modeList.Add(key);
+                }
+            }
+
+            return modeList.ToArray();
         }
     }
     
