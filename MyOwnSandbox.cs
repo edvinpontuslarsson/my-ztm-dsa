@@ -9,9 +9,6 @@ namespace MyZtmDsa
 
         public static int[] Mode (int[] numbers)
         {
-
-            Array.Sort(numbers);
-
             Dictionary<int, int> dictionary = new Dictionary<int, int>();
 
             int maxOccurance = 0;
